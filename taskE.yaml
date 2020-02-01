@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nginx-dns
+spec:
+  replicas: 
+  selector:
+    matchLabels:
+      tier: nginx-dns
+  template:
+    metadata:
+      labels:
+        tier: nginx-dns 
+    spec:
+      containers:
+      - name: nginx-dns
+        image: nginx
